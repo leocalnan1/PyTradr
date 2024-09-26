@@ -1,7 +1,7 @@
 class CryptoMarketData:
     def __init__(self, mode='live', historical_file=None):
         """
-        Initialize the CryptoMarketData object.
+        Initialize the CryptoMarketData object here.
         """
         pass
 
