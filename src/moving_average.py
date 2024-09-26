@@ -3,3 +3,4 @@ class Moving_Average(self):
         pass
 
     def simple_moving_average(self):
+        pass
