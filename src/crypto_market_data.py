@@ -60,7 +60,6 @@ class CryptoMarketData:
 
 
 if __name__ == "__main__":
-
     # Historical mode example
     data_source = CryptoMarketData(symbol="ETH-USD", historical=True, historical_day_range=365*2)
     while data_source.has_historical_data():
