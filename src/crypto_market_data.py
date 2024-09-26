@@ -26,7 +26,7 @@ class CryptoMarketData:
         self.historical_data = historical_data[['Close']]
         self.historical_day_range = len(self.historical_data)
 
-    def get_historical_price(self):
+    def get_historical_price(self) -> tuple[float, float]:
         """
         Returns the next price from the historical data along with its date.
         """
@@ -42,6 +42,12 @@ class CryptoMarketData:
         Is there more historical data to return?
         """
         return self.historical_idx < self.historical_day_range
+
+    def get_latest_price(self) -> tuple[float, float]:
+        if self.historical:
+            return self.get_historical_price()
+        else:
+            return -1, -1
 
 
 if __name__ == "__main__":
