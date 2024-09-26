@@ -28,3 +28,10 @@ class CryptoMarketData:
         Depending on the mode ('live' or 'historical'), returns the latest price.
         """
         pass
+
+if __init__ = "__main__":
+    data = dgbkd
+
+    CryptoMarketData.
+
+    print()
