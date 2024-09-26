@@ -25,7 +25,7 @@ class CryptoMarketData:
         btc_data: yf.Ticker = yf.Ticker(self.symbol)
         historical_data: pd.DataFrame = btc_data.history(start=start_date, end=end_date)
         self.historical_close_prices = historical_data[['Close']]
-        self.historical_idx = len(self.historical_close_prices)
+        self.historical_day_range = len( self.historical_close_prices)
 
     def get_live_price(self):
         """
@@ -38,9 +38,9 @@ class CryptoMarketData:
         Returns the next price from the historical data (for replay mode).
         """
         price: float = -1
-        if self.historical_idx > 0:
+        if self.historical_idx < self.historical_day_range:
             price: float = self.historical_close_prices["Close"][self.historical_idx-1]
-            self.historical_idx -= 1
+            self.historical_idx += 1
         return price
 
     def get_latest_price(self) -> float:
@@ -56,13 +56,13 @@ class CryptoMarketData:
         """
         Is there more historical data to return?
         """
-        return self.historical_idx > 0
+        return self.historical_idx < self.historical_day_range
 
 
 if __name__ == "__main__":
 
     # Historical mode example
-    data_source = CryptoMarketData(historical=True, historical_day_range=365*2)
+    data_source = CryptoMarketData(symbol="ETH-USD", historical=True, historical_day_range=365*2)
     while data_source.has_historical_data():
         print(data_source.get_latest_price())
 
