@@ -1,10 +1,13 @@
 import requests
 import pandas as pd
 
+instrument_name = "ETH_USDT"
+timeframe = "1D"
+
 url = "https://api.crypto.com/v2/public/get-candlestick"
 params = {
-    "instrument_name": "ETH_USDT",
-    "timeframe": "1D"
+    "instrument_name": instrument_name,
+    "timeframe": timeframe,
 }
 
 response = requests.get(url, params=params)
