@@ -31,11 +31,11 @@ class CryptoMarketData:
 
 if __name__ == "__main__":
 
-    # Historical mode
+    # Historical mode example
     dataSource = CryptoMarketData(mode="historical", historical_file="/path/to/data")
     latest_price = dataSource.get_latest_price()
 
-    # Live mode
+    # Live mode example
     dataSource = CryptoMarketData(mode="live")
     latest_price = dataSource.get_latest_price()
 
