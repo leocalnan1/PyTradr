@@ -62,7 +62,7 @@ class CryptoMarketData:
 if __name__ == "__main__":
 
     # Historical mode example
-    data_source = CryptoMarketData(historical=True, historical_day_range=5)
+    data_source = CryptoMarketData(historical=True, historical_day_range=365*2)
     while data_source.has_historical_data():
         print(data_source.get_latest_price())
 
