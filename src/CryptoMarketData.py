@@ -34,6 +34,7 @@ if __name__ == "__main__":
     # Historical mode example
     dataSource = CryptoMarketData(mode="historical", historical_file="/path/to/data")
     latest_price = dataSource.get_latest_price()
+    # Training would be with historical
 
     # Live mode example
     dataSource = CryptoMarketData(mode="live")
