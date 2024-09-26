@@ -29,9 +29,15 @@ class CryptoMarketData:
         """
         pass
 
-if __init__ = "__main__":
-    data = dgbkd
+if __name__ == "__main__":
 
-    CryptoMarketData.
+    # Historical mode
+    dataSource = CryptoMarketData(mode="historical", historical_file="/path/to/data")
+    latest_price = dataSource.get_latest_price()
 
-    print()
+    # Live mode
+    dataSource = CryptoMarketData(mode="live")
+    latest_price = dataSource.get_latest_price()
+
+
+
