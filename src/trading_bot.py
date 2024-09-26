@@ -57,7 +57,7 @@ class MovingAverageTradingBot:
         if self.current_position is None:
             self.current_position = "Stock"  # Assume trading a generic stock
             self.entry_price = price
-            print(f"Opened position on {date} at {price}")
+            print(f"\nOpened position on {date} at {price}")
 
     def close_position(self, date, price):
         """
@@ -78,10 +78,8 @@ class MovingAverageTradingBot:
         """
         self.total_profit += profit
         print(f"Total Profit: {self.total_profit}")
-        print(f"")
-
 # Example usage
-data_source = CryptoMarketData(symbol="ETH-USD", historical=True, historical_day_range=365)
+data_source = CryptoMarketData(symbol="ETH-USD", historical=True, historical_day_range=365 * 10)
 
 # Simulate sequential price updates
 bot = MovingAverageTradingBot(10000)
